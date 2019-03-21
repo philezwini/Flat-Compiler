@@ -1,0 +1,40 @@
+public void optimizeTree() {
+		ntList = new LinkedList<>();
+		findNTNodes(pTree.root());
+		while(!ntList.isEmpty()) {
+			PNode node = ntList.remove();
+			System.out.println("Current nonTerm: " + node.value().getName());
+			
+			if(!node.hasChildren()) {
+				pTree.fastRemove(node);
+				continue;
+			}	
+			
+			if(node.children().size() == 1) {
+				pTree.remove(node);
+				continue;
+			}	*/
+			
+			/*if(pTree.numTermChildren(node) == 1) {
+				for(PNode child : node.children()) {
+					if(!pTree.isNonTerminal(child))
+						pTree.replace(node, child);
+				}
+				continue;
+			}
+		}
+	}
+
+	private void findNTNodes(PNode node) {
+		if(pTree.isNonTerminal(node))
+			ntList.add(node);
+
+		if(node.hasChildren()) {
+			for(PNode child : node.children())
+				findNTNodes(child);
+		}
+	}
+
+	public String getDebugCode() {
+		return pTree.genDebugCode();
+	}

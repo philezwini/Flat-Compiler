@@ -1,0 +1,53 @@
+program FactorialCalculator
+start
+	
+	method::integer getFactorial(integer digit)
+	start
+				
+		if((digit == 1) || (digit == 0))
+		start
+			integer b = 9;
+			return digit;
+		endif
+		return digit * call(getFactorial);
+		
+	endmethod
+	
+	method::integer getFactorialSequence(integer digit)
+	start
+		
+		integer sequence[10];
+		integer i;
+		
+		for(i from 0 to digit - 1 step 1)
+		start
+			
+			sequence[i] = digit + i;
+			dec digit;
+			inc digit;
+		endfor
+		
+		return sequence;
+	endmethod
+	
+	method::void main()
+	start
+		
+		system.out("Enter an integer: ");
+		integer x = system.in::integer();
+		integer factorial = call(getFactorial, x);
+		system.lineout("The factorial of " + x + " is " + factorial + ".");
+		system.out(string.at(customString, 0));
+		character a = string.at(customString, 0);
+		integer sequence[5] = call(getFactorialSequence, x);
+		system.out("The factorial sequence for " + x + " is ");
+		integer i;
+		
+		for(i from 0 to array.length(sequence) - 1 step 1)
+		start
+			system.out(sequence[i]);
+		endfor
+			
+	endmethod
+	
+endprogram

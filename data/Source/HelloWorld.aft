@@ -1,0 +1,12 @@
+program HelloWorld
+start
+
+	method::void main()
+	start
+
+		string helloWorld;
+		helloWorld = "Hello World!";
+		system.lineout(helloWorld);
+		
+	endmethod
+endprogram

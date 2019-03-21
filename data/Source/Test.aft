@@ -1,0 +1,8 @@
+program HelloWorld
+start
+		method::void main()
+		start
+			string myString = "HelloWorld!";
+			system.out(myString);
+		endmethod
+endprogram

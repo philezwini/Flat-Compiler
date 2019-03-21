@@ -1,0 +1,9 @@
+program HelloWorld
+start
+	method::void main() 
+	start
+		character a[10];
+		character b[10] = 11;
+		character c = 'a';
+	endmethod
+endprogram

@@ -1,0 +1,23 @@
+digraph DFA {
+rankdir=UD;
+size="10,5;"
+node [shape = circle];
+S0 -> S1 [label = "[program, PROGDECL]"];
+S1 -> S2 [label = "[HelloWorld, ID]"];
+S1 -> S3 [label = "[start, START]"];
+S1 -> S4 [label = "[endprogram, ENDPROG]"];
+S1 -> S5 [label = "[method, FUNC]"];
+S1 -> S6 [label = "[::, TYPESPEC]"];
+S1 -> S7 [label = "[void, VOID]"];
+S1 -> S8 [label = "[main, ID]"];
+S1 -> S9 [label = "[(, LPARENT]"];
+S1 -> S10 [label = "[), RPARENT]"];
+S1 -> S11 [label = "[start, START]"];
+S1 -> S12 [label = "[endmethod, ENDFUNC]"];
+S1 -> S13 [label = "[;, SEMICOL]"];
+S1 -> S14 [label = "[=, ASSIGN]"];
+S1 -> S15 [label = "[a, ID]"];
+S1 -> S16 [label = "[+, PLUS]"];
+S1 -> S17 [label = "[b, ID]"];
+S1 -> S18 [label = "[c, ID]"];
+}

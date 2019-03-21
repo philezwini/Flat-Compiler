@@ -1,0 +1,124 @@
+program SimpleArithmetic
+start
+
+	method::integer addIntegers(integer x, integer y)
+	start	
+	
+		integer answer = x + y;
+		return answer;
+		
+	endmethod
+	
+	method::integer subtractIntegers(integer x, integer y)
+	start	
+	
+		integer answer = x - y;
+		return answer;
+		
+	endmethod
+	
+	method::float multiplyFloatingPoint(float x, float y)
+	start
+		
+		float result = x * y;
+		return result;
+		
+	endmethod
+	
+	method::float divideFloatingPoints(float x, float y)
+	start
+	
+		float result = x / y;
+		return result;
+		
+	endmethod
+	
+	
+	method::void main()
+	start
+	
+		boolean continue = true;
+		while(continue)
+		start
+		
+			system.lineout("a. Integer addition.");
+			system.lineout("b. Integer subtraction.");
+			system.lineout("c. FLoating point multiplication.");
+			system.lineout("d. Floating point division.");
+			system.lineout("x. Quit.");
+			
+			character choice = system.in::character();
+			
+			if(choice == 'a')
+			start
+				
+				system.out("Enter the first integer: ");
+				integer x = system.in::integer();
+				system.lineout("Enter the second integer: ");
+				integer y = system.in::integer();
+				integer result = call(addIntegers, x, y);
+				system.lineout("Result: " + result);
+				
+			endif
+			
+			if(choice == 'b')
+			start
+				
+				system.out("Enter the first integer: ");
+				integer x = system.in::integer();
+				system.lineout("Enter the second integer: ");
+				integer y = system.in::integer();
+				integer result = call(subtractIntegers, x, y);
+				system.lineout("Result: " + result);
+				
+			endif
+			
+			if(choice == 'c')
+			start
+				
+				system.out("Enter the first floating point value: ");
+				float x = system.in::float();
+				system.lineout("Enter the second floating point value: ");
+				float y = system.in::float();
+				float result = call(multiplyFloatingPoint, x, y);
+				system.lineout("Result: " + result);
+				
+			endif
+			
+			if(choice == 'd')
+			start
+				
+				system.out("Enter the quotient (floating point): ");
+				float x = system.in::float();
+				system.lineout("Enter the divisor (floating point): ");
+				float y = system.in::float();
+				float result = call(divideFloatingPoints, x, y);
+				system.lineout("Result: " + result);
+				
+			endif
+			
+			if(choice == 'x')
+			start
+				
+				continue = false;
+				character a[8];
+				a[0] = 'G';
+				a[1] = 'o';
+				a[2] = 'o';
+				a[3] = 'd';
+				a[4] = 'b';
+				a[5] = 'y';
+				a[6] = 'e';
+				a[7] = '!';
+				
+				for(i from 0 to 7 step 1)
+				start
+					system.out(a[i]);
+				endfor
+			endif
+			
+		endwhile
+		
+	endmethod
+	
+endprogram

@@ -1,0 +1,47 @@
+program IOTest
+start
+
+	method::void testIO()
+	start
+		
+		system.lineout("Welcome!");
+		while(true)
+		start
+		
+			system.lineout("1. Perform IO Test.");
+			system.lineout("2. Quit.");
+			
+			integer value = system.in::integer();
+			
+			if(value == 2)
+			start
+				system.out("Goodbye.");
+				system.quit();
+			endif
+			
+			if(value == 1)
+			start
+				system.out("Enter your name: ");
+				string name = system.in::string();
+				
+				system.out("Enter your age: ");
+				int age = system.in::integer();
+				
+				system.out("Enter your salary to two decimal points: ");
+				float salary = system.in::float();
+				
+				system.out("Enter your favorite letter from the alphabet: ");
+				character letter = system.in::character();
+				
+				system.out("Here is the info you supplied: ");
+				system.out("Name: " + name);
+				system.out("Age: " + age);
+				system.out("Salary: " + salary);
+				system.out("Favorite letter from the alphabet: " + letter);
+				system.lineout("System IO works fine. Thank you");
+				system.lineout();
+			endif
+			
+		endwhile
+		
+	endprogram
